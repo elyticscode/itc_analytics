@@ -10,7 +10,10 @@ Gem::Specification.new do |spec|
   spec.email         = ["steele@elytics.com"]
 
   spec.summary       = %q{Get analytics from iTunesConnect}
-  spec.description   = %q{Get analytics from iTunesConnect}
+  spec.description   = <<-EOF 
+    ITCAnalytics uses the undocumented iTunesConnect API's to retreive 
+    analytics for iOS and tvOS apps.
+  EOF
   spec.homepage      = "https://www.elytics.com"
   spec.license       = "MIT"
 
