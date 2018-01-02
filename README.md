@@ -1,13 +1,13 @@
-# Ios::Analytics
+# ITCAnalytics
 
-A gem to access iOS analytics from iTunesConnect.
+A gem to access analytics from iTunesConnect.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ios-analytics'
+gem 'itc_analytics'
 ```
 
 And then execute:
@@ -16,14 +16,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install ios-analytics
+    $ gem install itc_analytics
 
 ## Usage
 
 Login: 
 
 ```ruby
-IosAnalytics.login('username', 'password')
+ITCAnalytics.login('username', 'password')
 ```
 
 ## Development
@@ -34,7 +34,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ios-analytics. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/elyticscode/itc_analytics. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
