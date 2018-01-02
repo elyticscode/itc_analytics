@@ -1,0 +1,97 @@
+{
+  "size": 4,
+  "results": [
+    {
+      "adamId": "999999999",
+      "meetsThreshold": false,
+      "group": {
+        "key": "AppleTV",
+        "title": "Apple TV"
+      },
+      "data": [
+        {
+          "date": "2017-12-01T00:00:00Z",
+          "installs": -1.0
+        },
+        {
+          "date": "2017-12-02T00:00:00Z",
+          "installs": -1.0
+        }
+      ],
+      "totals": {
+        "value": -1.0,
+        "type": "COUNT",
+        "key": "installs"
+      }
+    },
+    {
+      "adamId": "999999999",
+      "meetsThreshold": true,
+      "group": {
+        "key": "iPad",
+        "title": "iPad"
+      },
+      "data": [
+        {
+          "date": "2017-12-01T00:00:00Z",
+          "installs": 3.0
+        },
+        {
+          "date": "2017-12-02T00:00:00Z",
+          "installs": 1.0
+        }
+      ],
+      "totals": {
+        "value": 4.0,
+        "type": "COUNT",
+        "key": "installs"
+      }
+    },
+    {
+      "adamId": "999999999",
+      "meetsThreshold": true,
+      "group": {
+        "key": "iPhone",
+        "title": "iPhone"
+      },
+      "data": [
+        {
+          "date": "2017-12-01T00:00:00Z",
+          "installs": 6.0
+        },
+        {
+          "date": "2017-12-02T00:00:00Z",
+          "installs": 4.0
+        }
+      ],
+      "totals": {
+        "value": 10.0,
+        "type": "COUNT",
+        "key": "installs"
+      }
+    },
+    {
+      "adamId": "999999999",
+      "meetsThreshold": true,
+      "group": {
+        "key": "iPod",
+        "title": "iPod"
+      },
+      "data": [
+        {
+          "date": "2017-12-01T00:00:00Z",
+          "installs": 0.0
+        },
+        {
+          "date": "2017-12-02T00:00:00Z",
+          "installs": 0.0
+        }
+      ],
+      "totals": {
+        "value": 0.0,
+        "type": "COUNT",
+        "key": "installs"
+      }
+    }
+  ]
+}

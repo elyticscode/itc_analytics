@@ -1,0 +1,101 @@
+{
+  "size": 17,
+  "results": [
+    {
+      "name": "FAKE APP 1",
+      "adamId": "999999999",
+      "isBundle": false,
+      "iconUrl": "https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/56/d7/57/56d75724-e137-7745-5ec2-b485a4d2876d/AppIcon-1x_U007emarketing-85-220-0-6.png/340x340bb-80.png",
+      "assetToken": "Purple118/v4/56/d7/57/56d75724-e137-7745-5ec2-b485a4d2877c/AppIcon-1x_U007emarketing-85-220-0-6.png",
+      "platforms": [
+        "iOS"
+      ],
+      "isEnabled": true,
+      "appOptInRate": 27
+    },
+    {
+      "name": "FAKE APP 2",
+      "adamId": "999999998",
+      "isBundle": false,
+      "iconUrl": "https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/d1/c8/2e/d1c82e42-3fae-d9e1-b12c-4167c6e1264d/AppIcon-1x_U007emarketing-85-220-0-6.png/340x340bb-80.png",
+      "assetToken": "Purple128/v4/d1/c8/2e/d1c82e42-3fae-d9e1-b12c-4167f6e2264a/AppIcon-1x_U007emarketing-85-220-0-6.png",
+      "platforms": [
+        "iOS"
+      ],
+      "isEnabled": true,
+      "appOptInRate": 20
+    },
+    {
+      "name": "FAKE APP 3",
+      "adamId": "999999997",
+      "isBundle": false,
+      "iconUrl": "https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/0e/3d/d5/0e3dd57c-ac70-92fa-5588-2729b3bcb1bc/AppIcon-1x_U007emarketing-85-220-0-6.png/340x340bb-80.png",
+      "assetToken": "Purple128/v4/0e/3d/d5/0e3dd57f-ac70-92fa-5588-2729b3beb1bc/AppIcon-1x_U007emarketing-85-220-0-6.png",
+      "platforms": [
+        "iOS"
+      ],
+      "isEnabled": true,
+      "appOptInRate": 36
+    },
+    {
+      "name": "FAKE APP 4",
+      "adamId": "999999996",
+      "isBundle": false,
+      "iconUrl": "https://is2-ssl.mzstatic.com/image/thumb/Purple128/v4/d3/3f/dc/d33fdce4-3455-29b3-5941-47acedd799e1/AppIcon-1x_U007emarketing-85-220-0-5.png/340x340bb-80.png",
+      "assetToken": "Purple128/v4/d3/3f/dc/d33fdcc4-3455-29b3-5941-47acedd799c1/AppIcon-1x_U007emarketing-85-220-0-5.png",
+      "platforms": [
+        "iOS"
+      ],
+      "isEnabled": true,
+      "appOptInRate": 27
+    },
+    {
+      "name": "FAKE APP 5",
+      "adamId": "999999995",
+      "isBundle": false,
+      "iconUrl": "https://is5-ssl.mzstatic.com/image/thumb/Purple118/v4/22/30/43/2230434c-e926-0ac7-af75-5b9470fc8c98/AppIcon-1x_U007emarketing-85-220-0-6.png/340x340bb-80.png",
+      "assetToken": "Purple118/v4/22/30/43/2230434e-e926-0ac7-af75-5b9470fc8c97/AppIcon-1x_U007emarketing-85-220-0-6.png",
+      "platforms": [
+        "iOS"
+      ],
+      "isEnabled": true,
+      "appOptInRate": 26
+    },
+    {
+      "name": "FAKE APP 6",
+      "adamId": "999999994",
+      "isBundle": false,
+      "iconUrl": "https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/0f/68/bf/0c68bf33-1089-2fe5-ab49-2b32ff706208/AppIcon-1x_U007emarketing-85-220-0-1.png/340x340bb-80.png",
+      "assetToken": "Purple128/v4/0f/68/bf/0f68bf33-1089-2fe5-ab49-2b32ff706218/AppIcon-1x_U007emarketing-85-220-0-1.png",
+      "platforms": [
+        "iOS"
+      ],
+      "isEnabled": true,
+      "appOptInRate": 26
+    },
+    {
+      "name": "FAKE APP 7",
+      "adamId": "999999993",
+      "isBundle": false,
+      "iconUrl": "https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/4c/0b/82/4c0b82a9-0718-1c4b-debc-b15d526a2739/AppIcon-1x_U007emarketing-85-220-0-3.png/340x340bb-80.png",
+      "assetToken": "Purple118/v4/4c/0b/82/4c0b82a9-0718-1b4b-debc-b15d526a1739/AppIcon-1x_U007emarketing-85-220-0-3.png",
+      "platforms": [
+        "iOS"
+      ],
+      "isEnabled": true,
+      "appOptInRate": 25
+    },
+    {
+      "name": "FAKE APP 8",
+      "adamId": "719629934",
+      "isBundle": false,
+      "iconUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple118/v4/5e/1c/9f/3e1c9fe5-fc40-cb88-39ee-7fef124e341d/AppIcon-1x_U007emarketing-85-220-0-3.png/340x340bb-80.png",
+      "assetToken": "Purple118/v4/5e/1c/9f/5e1c9fe5-fc40-cb88-39ee-7fef124e241d/AppIcon-1x_U007emarketing-85-220-0-3.png",
+      "platforms": [
+        "iOS"
+      ],
+      "isEnabled": true,
+      "appOptInRate": 25
+    }
+  ]
+}
