@@ -30,6 +30,61 @@ RSpec.describe ITCAnalytics do
       apple_widget_key: "22d448248055bab0dc197c6271d738c3")
   end
 
+  describe '.get_available_apps' do
+
+    def session_repo(return_session)
+      repo = double("Repositories::Session::InMemory")
+      allow(repo).to receive(:get).and_return(return_session)
+      allow(repo).to receive(:save)
+      repo
+    end
+
+    def session
+      s = double("Domain::Entities::Session")
+      allow(s).to receive(:account_cookie).and_return("fake_account_cookie")
+      allow(s).to receive(:itctx_cookie).and_return("fake_itctx_cookie")
+      return s
+    end
+    
+    def valid_session 
+      valid_session = session
+      allow(valid_session).to receive(:nil?).and_return(false)
+      allow(valid_session).to receive(:valid?).and_return(true)
+      valid_session
+    end
+
+    def invalid_session
+      valid_session = session
+      allow(valid_session).to receive(:nil?).and_return(false)
+      allow(valid_session).to receive(:valid?).and_return(false)
+      valid_session
+    end
+
+    def itunesconnect_gateway(data_returned) 
+      gateway = double("itunesconnect_gateway")
+      if data_returned == nil 
+        allow(gateway).to receive(:get_applications_json).and_raise(
+          ITCAnalytics::Interfaces::Gateways::Exceptions::ItunesUnauthorized
+        )
+      else
+        allow(gateway).to receive(:get_applications_json).and_return(data_returned)
+      end
+      gateway
+    end
+
+    it 'gets all available apps' do
+      ITCAnalytics.configure do |config|
+        config.session_repository = session_repo(valid_session)
+        config.itunesconnect_gateway = itunesconnect_gateway(File.read('spec/data/get_applications.json'))
+      end
+
+      result = ITCAnalytics.get_available_apps
+      expect(result).not_to be_nil
+      expect(result).to be_an(Array)
+      expect(result[0]).to be_an(ITCAnalytics::Domain::Entities::Application)
+    end
+  end
+
 
 =begin
   describe '.get_installs_for_date' do 

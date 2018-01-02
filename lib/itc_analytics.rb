@@ -3,7 +3,7 @@ require "itc_analytics/interfaces/gateways/itunesconnect"
 require "itc_analytics/interfaces/repositories/session/inmemory"
 require "itc_analytics/use_cases/create_new_session"
 require "itc_analytics/use_cases/login"
-
+require "itc_analytics/use_cases/get_available_applications"
 module ITCAnalytics
     #the main class 
   	class << self 
@@ -39,5 +39,11 @@ module ITCAnalytics
   			return success 
   		end
 
+      def get_available_apps
+        UseCases::GetAvailableApplications.new(
+          session_repository: session_repository,
+          itunesconnect_gateway: itunesconnect_gateway
+        ).execute
+      end
   	end
 end
