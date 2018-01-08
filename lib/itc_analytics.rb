@@ -5,6 +5,7 @@ require "itc_analytics/interfaces/repositories/session/inmemory"
 require "itc_analytics/use_cases/create_new_session"
 require "itc_analytics/use_cases/login"
 require "itc_analytics/use_cases/get_available_applications"
+require "itc_analytics/use_cases/get_app_installs"
 module ITCAnalytics
     #the main class 
   	class << self 
