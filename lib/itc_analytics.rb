@@ -46,5 +46,24 @@ module ITCAnalytics
           itunesconnect_gateway: itunesconnect_gateway
         ).execute
       end
-  	end
+
+      def get_app_downloads_for_date(app_id, date) 
+        application = Domain::Entities::Application.new(
+          itunes_app_id: app_id,
+          itunes_app_name: nil,
+          is_bundle: nil,
+          icon_url: nil,
+          asset_token: nil,
+          platforms: nil,
+          is_enabled: nil,
+          app_opt_in_rate: nil
+        )
+        UseCases::GetAppInstalls.new(
+          applications: [application],
+          session_repository: session_repository,
+          start_date: date,
+          end_date: date,
+          itunes_gateway: itunesconnect_gateway
+        ).execute
+      end
 end

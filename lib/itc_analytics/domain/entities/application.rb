@@ -33,7 +33,7 @@ module ITCAnalytics
 				end
 
 				def valid?
-	  				String(itunes_app_id).length > 0 && String(itunes_app_name).length > 0
+	  				String(itunes_app_id).length > 0
 				end
 			end
 		end

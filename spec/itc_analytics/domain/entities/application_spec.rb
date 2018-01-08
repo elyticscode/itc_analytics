@@ -27,24 +27,14 @@ RSpec.describe ITCAnalytics::Domain::Entities::Application do
 			expect(app.valid?).to be(true)
 		end
 
-		it 'is not valid missing name or id' do 
+		it 'is not valid missing id' do 
 
 			app = application_build("", "valid_name", nil, nil, nil, nil, nil, nil)
 			expect(app).not_to be_nil
 			expect(app.valid?).to be(false)
 
 
-			app = application_build("valid_id", "", nil, nil, nil, nil, nil, nil)
-			expect(app).not_to be_nil
-			expect(app.valid?).to be(false)
-
-
 			app = application_build(nil, "valid_name", nil, nil, nil, nil, nil, nil)
-			expect(app).not_to be_nil
-			expect(app.valid?).to be(false)
-
-
-			app = application_build("valid_id", nil, nil, nil, nil, nil, nil, nil)
 			expect(app).not_to be_nil
 			expect(app.valid?).to be(false)
 		end

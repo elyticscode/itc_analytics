@@ -1,7 +1,54 @@
 require "spec_helper"
 require "itc_analytics/use_cases/create_new_session"
 RSpec.describe ITCAnalytics do
+
+  def session_repo(return_session)
+    repo = double("Repositories::Session::InMemory")
+    allow(repo).to receive(:get).and_return(return_session)
+    allow(repo).to receive(:save)
+    repo
+  end
+
+  def session
+    s = double("Domain::Entities::Session")
+    allow(s).to receive(:account_cookie).and_return("fake_account_cookie")
+    allow(s).to receive(:itctx_cookie).and_return("fake_itctx_cookie")
+    return s
+  end
+  
+  def valid_session 
+    valid_session = session
+    allow(valid_session).to receive(:nil?).and_return(false)
+    allow(valid_session).to receive(:valid?).and_return(true)
+    valid_session
+  end
+
+  def invalid_session
+    valid_session = session
+    allow(valid_session).to receive(:nil?).and_return(false)
+    allow(valid_session).to receive(:valid?).and_return(false)
+    valid_session
+  end
+
+  def itunesconnect_gateway(data_returned) 
+    gateway = double("itunesconnect_gateway")
+    if data_returned == nil 
+      allow(gateway).to receive(:get_applications_json).and_raise(
+        ITCAnalytics::Interfaces::Gateways::Exceptions::ItunesUnauthorized
+      )
+      allow(gateway).to receive(:execute_metrics_query).and_raise(
+        ITCAnalytics::Interfaces::Gateways::Exceptions::ItunesUnauthorized
+      )
+    else
+      allow(gateway).to receive(:get_applications_json).and_return(data_returned)
+      allow(gateway).to receive(:execute_metrics_query).and_return(data_returned)
+    end
+    gateway
+  end
+
   describe '.login' do 
+
+
   	let(:repo) { ITCAnalytics.session_repository }
 
 
@@ -21,58 +68,12 @@ RSpec.describe ITCAnalytics do
   	end
   end
 
-  def http_controller 
-    return ITCAnalytics::Interfaces::Controllers::Http.new
-  end  
 
-  def itunesconnect_gateway 
-    return ITCAnalytics::Interfaces::Gateways::ItunesConnect.new(http_controller: http_controller, 
-      apple_widget_key: "22d448248055bab0dc197c6271d738c3")
-  end
 
   describe '.get_available_apps' do
 
-    def session_repo(return_session)
-      repo = double("Repositories::Session::InMemory")
-      allow(repo).to receive(:get).and_return(return_session)
-      allow(repo).to receive(:save)
-      repo
-    end
-
-    def session
-      s = double("Domain::Entities::Session")
-      allow(s).to receive(:account_cookie).and_return("fake_account_cookie")
-      allow(s).to receive(:itctx_cookie).and_return("fake_itctx_cookie")
-      return s
-    end
-    
-    def valid_session 
-      valid_session = session
-      allow(valid_session).to receive(:nil?).and_return(false)
-      allow(valid_session).to receive(:valid?).and_return(true)
-      valid_session
-    end
-
-    def invalid_session
-      valid_session = session
-      allow(valid_session).to receive(:nil?).and_return(false)
-      allow(valid_session).to receive(:valid?).and_return(false)
-      valid_session
-    end
-
-    def itunesconnect_gateway(data_returned) 
-      gateway = double("itunesconnect_gateway")
-      if data_returned == nil 
-        allow(gateway).to receive(:get_applications_json).and_raise(
-          ITCAnalytics::Interfaces::Gateways::Exceptions::ItunesUnauthorized
-        )
-      else
-        allow(gateway).to receive(:get_applications_json).and_return(data_returned)
-      end
-      gateway
-    end
-
     it 'gets all available apps' do
+
       ITCAnalytics.configure do |config|
         config.session_repository = session_repo(valid_session)
         config.itunesconnect_gateway = itunesconnect_gateway(File.read('spec/data/get_applications.json'))
@@ -82,6 +83,23 @@ RSpec.describe ITCAnalytics do
       expect(result).not_to be_nil
       expect(result).to be_an(Array)
       expect(result[0]).to be_an(ITCAnalytics::Domain::Entities::Application)
+    end
+  end
+
+  describe '.get_app_downloads_for_date' do
+
+
+    it 'gets the number of app installs for the given date and app id' do 
+      
+
+      ITCAnalytics.configure do |config|
+        config.session_repository = session_repo(valid_session)
+        config.itunesconnect_gateway = itunesconnect_gateway(File.read('spec/data/get_installs.json'))
+      end
+
+      result = ITCAnalytics.get_app_downloads_for_date('01234', Date.new)
+      expect(result).not_to be_nil
+      expect(result).to be_an(Array)
     end
   end
 
