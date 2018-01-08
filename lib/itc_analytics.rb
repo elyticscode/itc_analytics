@@ -66,4 +66,5 @@ module ITCAnalytics
           itunes_gateway: itunesconnect_gateway
         ).execute
       end
+    end
 end
