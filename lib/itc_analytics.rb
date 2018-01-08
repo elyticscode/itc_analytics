@@ -1,4 +1,5 @@
 require "itc_analytics/version"
+require "itc_analytics/interfaces/controllers/http"
 require "itc_analytics/interfaces/gateways/itunesconnect"
 require "itc_analytics/interfaces/repositories/session/inmemory"
 require "itc_analytics/use_cases/create_new_session"
