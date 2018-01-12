@@ -48,7 +48,7 @@ module ITCAnalytics
         ).execute
       end
 
-      def get_app_downloads_for_date(app_id, date) 
+      def get_app_downloads_for_date_range(app_id, start_date, end_date) 
         application = Domain::Entities::Application.new(
           itunes_app_id: app_id,
           itunes_app_name: nil,
@@ -62,8 +62,8 @@ module ITCAnalytics
         UseCases::GetAppInstalls.new(
           applications: [application],
           session_repository: session_repository,
-          start_date: date,
-          end_date: date,
+          start_date: start_date,
+          end_date: end_date,
           itunes_gateway: itunesconnect_gateway
         ).execute
       end
